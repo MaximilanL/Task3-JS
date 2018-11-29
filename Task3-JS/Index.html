@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>    
+      label {
+        display: block;
+        padding: 10px;
+      }
+
+      .box {
+      width: 0;
+      height: 0;
+      background-color: red;
+      transition: all 1s ease-out;
+      }
+    </style>
+    <title>JS-Task 2</title>
+  </head>
+  <body> 
+
+    <div class="block">
+      <label for="width">
+      <input type="text" id="width"> Width
+      </label>
+      <label for="height">
+      <input type="text" id="height"> Height
+      </label>
+    </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+  <script>
+    let width = document.querySelector('#width'),
+        wrap = document.querySelector('.block'),
+        height = document.querySelector('#height');
+
+    let box = document.createElement('div');
+    box.classList.add('box');
+    wrap.appendChild(box);
+
+    width.addEventListener('input', func);
+    height.addEventListener('input', func);
+
+    function func() {
+      if (this.id === 'width') {
+        box.style.width = this.value + 'px';
+      } else {
+        box.style.height = this.value + 'px';
+      }  
+    }
+  </script>
+  </body>
+</html>
